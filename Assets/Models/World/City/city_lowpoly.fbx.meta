@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 92321f6918b45db4e92a6f81fb46b3df
+guid: c61889a0553fb3c4d963fe921f651230
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -19,11 +19,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Bricks
     second: {fileID: 2100000, guid: 2af96ffdd8e8eeb40a4cae95e4fa5aec, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Columns
-    second: {fileID: 2100000, guid: 2f4842db1f29fe84f8d7deace2be3a3e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -63,7 +58,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Emitted light
-    second: {fileID: 2100000, guid: f4923dbc3d7c832448cb037569e291e5, type: 2}
+    second: {fileID: 2100000, guid: 7e5cfb54f87d1c14aac9b113ec1acf12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emitted light.001
+    second: {fileID: 2100000, guid: 05cfd8ed1ca94744c8e3ae3c592a9d44, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -82,8 +82,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Lamp_Light
-    second: {fileID: 2100000, guid: c21a37e7b2dce5947ba1146ae0ad522d, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 1babea599c4a59b4cb8f994068d5238e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -158,57 +158,52 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Balcony
-    second: {fileID: 2800000, guid: c0a3c63e98d186b448daf2a5daf89b5b, type: 3}
+    second: {fileID: 2800000, guid: b51c8a14166549544999afb6910c1408, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Balcony_EmissionMap
-    second: {fileID: 2800000, guid: f3ccc57f85705de43a5f731e41aaca7c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: BricksBig_Baked
-    second: {fileID: 2800000, guid: 7817de3e55c320c428e0a8a8f850c15f, type: 3}
+    second: {fileID: 2800000, guid: 5ff5f3dc0c1abf546b6a287a9a6d372a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BricksRoof_Baked
-    second: {fileID: 2800000, guid: 04f9f700fb6d4154e925672dbf309649, type: 3}
+    second: {fileID: 2800000, guid: 08eb01c42b6115f418671c7f95ce6546, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BricksWall_Baked
-    second: {fileID: 2800000, guid: 0710f8baa72c27e4f8031d5ebfc5f991, type: 3}
+    second: {fileID: 2800000, guid: 53eb4d894b2a63d49876699ef31cc1cc, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Bricks_Shelf_Baked
-    second: {fileID: 2800000, guid: ee1e4c2ebbfa5ba4bbecb61206ba5d13, type: 3}
+    second: {fileID: 2800000, guid: 7394b70e984a82748b804a27d295db68, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Cone
-    second: {fileID: 2800000, guid: 9b7c808136dfaa744a0d8d61d2d58653, type: 3}
+    second: {fileID: 2800000, guid: caae9def776f70449950c737288a804a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Door
-    second: {fileID: 2800000, guid: bbee9f4ea48fde64d86ec398d79c8fcb, type: 3}
+    second: {fileID: 2800000, guid: 9c75170f3eb05134e8ff1fe5282ce96d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Lamp_Holder
-    second: {fileID: 2800000, guid: 69710e6360e35174fb1b21e24d373800, type: 3}
+    second: {fileID: 2800000, guid: c235f359d4f1ac248bddfc598934e431, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PCFloor_Baked
-    second: {fileID: 2800000, guid: bbf1b560e41f30a4da9b695d7ce2df29, type: 3}
+    second: {fileID: 2800000, guid: 1789ea68b0003594f8c9436076806714, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PCLogo_Baked
-    second: {fileID: 2800000, guid: ece981def85ffb04ca21f0cc2746b2a6, type: 3}
+    second: {fileID: 2800000, guid: 32358ae5b2bd5964792d6cb7117aea08, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
