@@ -82,11 +82,11 @@ LODGroup:
   - screenRelativeHeight: 0.39
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: -7511558181221131132, guid: 75ac2e3fcac33b84eb9f82e31c1af3cd, type: 3}
+    - renderer: {fileID: -7511558181221131132, guid: 49544ea0a5979884eb15b07ad23670e9, type: 3}
   - screenRelativeHeight: 0.19
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: -7511558181221131132, guid: 7bdee3043dee06249ac14ca64354c8ea, type: 3}
+    - renderer: {fileID: -7511558181221131132, guid: 76fee9de4926db94d92ab4e0a34c2b8a, type: 3}
   - screenRelativeHeight: 0.09
     fadeTransitionWidth: 0
     renderers:
