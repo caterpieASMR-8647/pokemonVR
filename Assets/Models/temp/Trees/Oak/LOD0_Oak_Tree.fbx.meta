@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 12a42b1d12da44c47b42dbf8ef1e1184
+guid: d6a9bb28ad313d04981b1c2e81f43a96
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bark
+    second: {fileID: 2100000, guid: 3d8d98c30fec44244b3a71c6d0c77edd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oak_Leaf
+    second: {fileID: 2100000, guid: f649cf6d6250b4c4e82b13deb2d06b82, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Oak_Branch
+    second: {fileID: 2800000, guid: 303d3bcd614fa824383b8f60f01e95d0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 048410b4211aa0a40a9882c0e22e9e90
+guid: 12a42b1d12da44c47b42dbf8ef1e1184
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pine_Bark
-    second: {fileID: 2100000, guid: 8e19289421bad544f99b5e1797433f40, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pine_Branch
-    second: {fileID: 2100000, guid: 96a9eb11ac0175440ad2ba7bf6b76c6f, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 5a122ea25c611c043a860f3a9c72a3e3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
