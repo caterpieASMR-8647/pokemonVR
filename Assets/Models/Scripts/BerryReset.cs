@@ -6,21 +6,22 @@ using UnityEngine;
 public class BerryReset : MonoBehaviour
 {
     private Vector3 ogPosition = Vector3.zero;
-    private float collisionCount = 0;
     
-    [SerializeField] private GameObject player;
+    [SerializeField] private Transform player;
+    
+    private Rigidbody rigidbody = null;
     
     private void Start()
     {
         ogPosition = transform.position;
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
         if (transform.position.y < 0 || Mathf.Abs((player.transform.position - transform.position).magnitude) > 20)
         {
-            GetComponent<Rigidbody>().transform.position = ogPosition;
-            Debug.Log("teleport distanza");
+            rigidbody.transform.position = ogPosition;
         }
     }
 
@@ -29,7 +30,6 @@ public class BerryReset : MonoBehaviour
         if (collision.gameObject.tag == "Terrain")
         {
             GetComponent<Rigidbody>().transform.position = ogPosition;
-            Debug.Log("teleport");
         }
     }
 }

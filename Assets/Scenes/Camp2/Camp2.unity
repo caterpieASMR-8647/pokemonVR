@@ -198,10 +198,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4648466799968677543, guid: 0c1c702c755f7cf4a848241fb9085a28, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
+    - target: {fileID: 871593913204219147, guid: 0c1c702c755f7cf4a848241fb9085a28, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1647462896}
     - target: {fileID: 5016928047791918680, guid: 0c1c702c755f7cf4a848241fb9085a28, type: 3}
       propertyPath: m_Name
       value: Baccaliegia
@@ -209,10 +209,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5016928047791918680, guid: 0c1c702c755f7cf4a848241fb9085a28, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1034638031}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c1c702c755f7cf4a848241fb9085a28, type: 3}
 --- !u!1001 &161775896
 PrefabInstance:
@@ -331,10 +328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1949833966438719418, guid: 97141957e082ac74abba9d5a70f06716, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
+    - target: {fileID: 332449148820911838, guid: 97141957e082ac74abba9d5a70f06716, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1647462896}
     - target: {fileID: 6944235191397744055, guid: 97141957e082ac74abba9d5a70f06716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50.90884
@@ -398,7 +395,7 @@ GameObject:
   - component: {fileID: 239328664}
   - component: {fileID: 239328669}
   - component: {fileID: 239328668}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,10 +698,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2557482739321287436, guid: 65e1e7f329b3b7d48a9742ec814c4b5c, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
+    - target: {fileID: 113094514890349356, guid: 65e1e7f329b3b7d48a9742ec814c4b5c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1647462896}
     - target: {fileID: 7433046924890104738, guid: 65e1e7f329b3b7d48a9742ec814c4b5c, type: 3}
       propertyPath: m_Name
       value: Baccacedro
@@ -768,7 +765,7 @@ GameObject:
   - component: {fileID: 514106242}
   - component: {fileID: 514106247}
   - component: {fileID: 514106246}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1493,24 +1490,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.009290852, y: 0.0098586865, z: 0.011989685}
   m_Center: {x: 0, y: -0.0003706186, z: 0.006021331}
---- !u!1 &1034638026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5016928047791918680, guid: 0c1c702c755f7cf4a848241fb9085a28, type: 3}
-  m_PrefabInstance: {fileID: 146649645}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1034638031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034638026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a77dc0295e0d1fa4593f7a34254c4494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  player: {fileID: 1647462891}
 --- !u!1 &1051865516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1504,7 @@ GameObject:
   - component: {fileID: 1051865517}
   - component: {fileID: 1051865522}
   - component: {fileID: 1051865521}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1676,7 +1655,7 @@ GameObject:
   - component: {fileID: 1268263546}
   - component: {fileID: 1268263551}
   - component: {fileID: 1268263550}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,7 +2203,7 @@ GameObject:
   - component: {fileID: 1537735161}
   - component: {fileID: 1537735166}
   - component: {fileID: 1537735165}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2375,7 +2354,7 @@ GameObject:
   - component: {fileID: 1580191603}
   - component: {fileID: 1580191608}
   - component: {fileID: 1580191607}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2526,7 +2505,7 @@ GameObject:
   - component: {fileID: 1594573007}
   - component: {fileID: 1594573012}
   - component: {fileID: 1594573011}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2893,7 +2872,7 @@ GameObject:
   - component: {fileID: 1678264326}
   - component: {fileID: 1678264331}
   - component: {fileID: 1678264330}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3113,7 +3092,7 @@ MonoBehaviour:
   pokemons:
   - {fileID: 2653261012080315184, guid: 21504ca81d2c2b54dada7a69ce1e38b7, type: 3}
   - {fileID: 4212039743687628985, guid: 1b27690476382d7469d11cfd41f247ef, type: 3}
-  - {fileID: 5724832518810934309, guid: 9433ad2552b09d54492a66245ea7f28c, type: 3}
+  - {fileID: 2034111096602045893, guid: b7e6205bc9266eb428ce3221aecc3780, type: 3}
   - {fileID: 4872371258972275382, guid: 51319730908cc5147805ae3179839d4a, type: 3}
 --- !u!4 &1760122322
 Transform:
@@ -3324,7 +3303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105144069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Teleport Planes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
