@@ -20,7 +20,6 @@ public class Pokemon_Handler : MonoBehaviour
     private Animator[] animators;
     private const string IsMoving = "IsMoving";
     private const string Scratch = "Scratch";
-    private bool[] waitForCoroutine;
     
     private void Awake()
     {
@@ -46,12 +45,6 @@ public class Pokemon_Handler : MonoBehaviour
             agent.autoRepath = true;
             agent.SetDestination( RandomNavMeshLocation( randomRadius ) );
         }
-        
-        waitForCoroutine = new bool[agents.Length];
-        for (int i = 0; i < waitForCoroutine.Length; i++)
-        {
-            waitForCoroutine[i] = true;
-        }
     }
 
     // 40 ticks per second
@@ -63,18 +56,34 @@ public class Pokemon_Handler : MonoBehaviour
         {
             case 39:
                 tickCounter = 0;
-                CheckAgent(0);
+                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(0);
                 break;
             case 9:
-                CheckAgent(1);
+                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(1);
                 break;
             case 19:
-                CheckAgent(2);
+                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(2);
                 break;
             case 29:
-                CheckAgent(3);
+                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(3);
                 break;
             default:
+                break;
+        }
+
+        switch ( tickCounter % 4 )
+        {
+            case 0:
+                animators[0].SetBool( IsMoving, agents[0].velocity.magnitude > 0.1f  );
+                break;
+            case 1:
+                animators[1].SetBool( IsMoving, agents[1].velocity.magnitude > 0.1f  );
+                break;
+            case 2:
+                animators[2].SetBool( IsMoving, agents[2].velocity.magnitude > 0.1f  );
+                break;
+            case 3:
+                animators[3].SetBool( IsMoving, agents[3].velocity.magnitude > 0.1f  );
                 break;
         }
     }
@@ -95,20 +104,9 @@ public class Pokemon_Handler : MonoBehaviour
     {
         if (agents.Length < index + 1) return;
         
-        if ( ( agents[index].destination == agents[index].transform.position || agents[index].velocity.magnitude <= 0.1f )
-            && waitForCoroutine[index] )
+        if ( agents[index].destination == agents[index].transform.position || agents[index].velocity.magnitude <= 0.1f )
         {
-            waitForCoroutine[index] = false;
-            animators[index].SetBool( IsMoving, waitForCoroutine[index] );
-            StartCoroutine(WaitRandomSeconds(index));
             agents[index].SetDestination( RandomNavMeshLocation( randomRadius ) );
         }
-    }
-
-    private IEnumerator WaitRandomSeconds( int index )
-    {
-        yield return new WaitForSeconds( Random.Range( 1f, 5f ) );
-        waitForCoroutine[index] = true;
-        animators[index].SetBool( IsMoving, waitForCoroutine[index] );
     }
 }
