@@ -29,7 +29,7 @@ public class BerryReset : MonoBehaviour
     {
         if (collision.gameObject.tag == "Terrain")
         {
-            GetComponent<Rigidbody>().transform.position = ogPosition;
+            rigidbody.transform.position = ogPosition;
         }
     }
 }

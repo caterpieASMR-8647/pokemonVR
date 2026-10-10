@@ -70,22 +70,8 @@ public class Pokemon_Handler : MonoBehaviour
             default:
                 break;
         }
-
-        switch ( tickCounter % 4 )
-        {
-            case 0:
-                animators[0].SetBool( IsMoving, agents[0].velocity.magnitude > 0.1f  );
-                break;
-            case 1:
-                animators[1].SetBool( IsMoving, agents[1].velocity.magnitude > 0.1f  );
-                break;
-            case 2:
-                animators[2].SetBool( IsMoving, agents[2].velocity.magnitude > 0.1f  );
-                break;
-            case 3:
-                animators[3].SetBool( IsMoving, agents[3].velocity.magnitude > 0.1f  );
-                break;
-        }
+        
+        animators[tickCounter%4].SetBool( IsMoving, agents[tickCounter%4].velocity.magnitude > 0.06f );
     }
 
     public Vector3 RandomNavMeshLocation( float radius )
