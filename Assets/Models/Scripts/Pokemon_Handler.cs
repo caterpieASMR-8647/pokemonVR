@@ -71,7 +71,7 @@ public class Pokemon_Handler : MonoBehaviour
                 break;
         }
         
-        animators[tickCounter%4].SetBool( IsMoving, agents[tickCounter%4].velocity.magnitude > 0.06f );
+        animators[tickCounter%4].SetBool( IsMoving, agents[tickCounter%4].velocity.magnitude > 0.05f );
     }
 
     public Vector3 RandomNavMeshLocation( float radius )
@@ -92,7 +92,8 @@ public class Pokemon_Handler : MonoBehaviour
         
         if ( agents[index].destination == agents[index].transform.position || agents[index].velocity.magnitude <= 0.1f )
         {
-            agents[index].SetDestination( RandomNavMeshLocation( randomRadius ) );
+            if ( agents[index].name == "pikachu(Clone)" && Random.Range( 0, 2 ) == 0 ) animators[index].SetTrigger( Scratch );
+            else agents[index].SetDestination( RandomNavMeshLocation( randomRadius ) );
         }
     }
 }

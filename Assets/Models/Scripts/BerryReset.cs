@@ -25,9 +25,9 @@ public class BerryReset : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter( Collision collision )
     {
-        if (collision.gameObject.tag == "Terrain")
+        if ( collision.gameObject.tag == "Terrain" )
         {
             rigidbody.transform.position = ogPosition;
         }
