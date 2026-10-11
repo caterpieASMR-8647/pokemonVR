@@ -1,8 +1,10 @@
 using System.Collections;
+using Oculus.Interaction;
 using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
-public class PokemonEat : MonoBehaviour
+public class PokemonCollision : MonoBehaviour
 {
     [SerializeField]
     Material mat;
