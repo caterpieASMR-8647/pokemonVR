@@ -1,8 +1,7 @@
+using System;
 using System.Collections;
-using Oculus.Interaction;
-using Unity.VisualScripting;
-using Unity.XR.CoreUtils;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PokemonCollision : MonoBehaviour
 {
@@ -15,20 +14,54 @@ public class PokemonCollision : MonoBehaviour
     [SerializeField]
     Texture caughtTexture;
     
+    [SerializeField]
+    AudioClip caughtSound;
+    [SerializeField]
+    AudioClip happySound;
+    [SerializeField]
+    AudioClip idleSound;
+
+    private AudioSource _audioSource;
+    private float _countdown;
+    
+    private void Start()
+    {
+        _audioSource = gameObject.GetComponent<AudioSource>();
+        _countdown = Random.Range( 0, 21 );
+    }
+
     private void OnTriggerEnter( Collider otherCollider )
     {
         switch (otherCollider.tag)
         {
             case "Pokeball":
                 Debug.Log("Pokemon Caught");
+                _audioSource.PlayOneShot( caughtSound );
                 mat.mainTexture = caughtTexture;
                 StartCoroutine( WaitAndResetTexture() );
                 break;
             case "Berry":
                 Debug.Log("Pokemon Eat");
+                _audioSource.PlayOneShot( happySound );
                 mat.mainTexture = happyTexture;
                 StartCoroutine( WaitAndResetTexture() );
                 break;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if ( !_audioSource.isPlaying )
+        {
+            if (_countdown <= 0)
+            {
+                _audioSource.PlayOneShot( idleSound );
+                _countdown = Random.Range( 0, 21 );
+            }
+            else
+            {
+                _countdown -= Time.deltaTime;
+            }
         }
     }
 

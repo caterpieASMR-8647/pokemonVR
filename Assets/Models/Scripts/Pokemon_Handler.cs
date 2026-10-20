@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using NUnit.Framework.Constraints;
-using Oculus.Interaction.Samples;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -71,7 +67,7 @@ public class Pokemon_Handler : MonoBehaviour
                 break;
         }
         
-        animators[tickCounter%4].SetBool( IsMoving, agents[tickCounter%4].velocity.magnitude > 0.05f );
+        animators[tickCounter%4].SetBool( IsMoving, agents[tickCounter%4].velocity.magnitude > 0.1f );
     }
 
     public Vector3 RandomNavMeshLocation( float radius )
