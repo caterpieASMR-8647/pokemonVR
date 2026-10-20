@@ -21,7 +21,7 @@ public class PokeballCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Pokemon")
+        if ( collision.gameObject.CompareTag( "Pokemon" ) )
         {
             _rigidbody.linearVelocity.Inverse();
             StartCoroutine(RotateToIdentity());

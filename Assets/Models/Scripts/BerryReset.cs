@@ -27,7 +27,7 @@ public class BerryReset : MonoBehaviour
 
     private void OnCollisionEnter( Collision collision )
     {
-        if ( collision.gameObject.tag == "Terrain" )
+        if ( collision.gameObject.CompareTag( "Terrain" ) )
         {
             rigidbody.transform.position = ogPosition;
         }

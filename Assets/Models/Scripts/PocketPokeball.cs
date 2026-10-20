@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class PocketPokeball : MonoBehaviour
 {
@@ -12,17 +13,16 @@ public class PocketPokeball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // if ( other.tag == )
-        _renderer.enabled = true;
+        if ( other.CompareTag("HandOrController") ) _renderer.enabled = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _renderer.enabled = false;
+        if ( other.CompareTag("HandOrController") ) _renderer.enabled = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        // if ( )
+        // if ( grab )
     }
 }
