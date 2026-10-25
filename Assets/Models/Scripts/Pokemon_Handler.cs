@@ -68,6 +68,7 @@ public class Pokemon_Handler : MonoBehaviour
         }
         
         animators[tickCounter%4].SetBool( IsMoving, agents[tickCounter%4].velocity.magnitude > 0.1f );
+        // agents[tickCounter%4].isStopped DA PROVARE INVECE CHE CONTROLLARE LA VELOCITA'
     }
 
     public Vector3 RandomNavMeshLocation( float radius )
