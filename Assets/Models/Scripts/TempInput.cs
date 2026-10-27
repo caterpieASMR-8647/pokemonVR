@@ -26,7 +26,7 @@ public class TempInput : MonoBehaviour
             {
                 if ( menuType.name == "MainMenu" ) menuType.SetActive( true );
             }
-            transform.position = _maincamera.transform.position + new Vector3( _maincamera.transform.forward.x, 0, _maincamera.transform.forward.z ) * (float)1.5;
+            transform.position = _maincamera.transform.position + Vector3.Normalize( new Vector3( _maincamera.transform.forward.x, 0, _maincamera.transform.forward.z ) ) * ((float)1.5);
             transform.eulerAngles = new Vector3( 0, _maincamera.transform.eulerAngles.y, 0 );
             
             gameObject.SetActive( true );

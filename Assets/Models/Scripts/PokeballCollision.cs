@@ -9,18 +9,20 @@ public class PokeballCollision : MonoBehaviour
     private Animator _animator;
     private const string CaughtPokemon = "CaughtPokemon";
     
-    private void Awake()
-    {
-        Instantiate(gameObject, Vector3.zero, Quaternion.identity);
-    }
+    // private void Awake()
+    // {
+    //     Instantiate(gameObject, Vector3.zero, Quaternion.identity);
+    // }
 
-    void Start()
-    {
-        gameObject.SetActive( false );
-    }
+    // void Start()
+    // {
+    //     gameObject.SetActive( false );
+    // }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if ( collision.gameObject.CompareTag( "Terrain" ) ) Destroy(gameObject);
+        
         if ( collision.gameObject.CompareTag( "Pokemon" ) )
         {
             _rigidbody.linearVelocity.Inverse();

@@ -25,9 +25,7 @@ public class AudioManager : MonoBehaviour
 
     public void MuteSfxVolume()
     {
-        Debug.Log(_tempSfxValue);
         _ = audioMixer.GetFloat("SFXVolume", out _tempSfxValue);
-        Debug.Log(_tempSfxValue);
         
         if (_tempSfxValue == -80) audioMixer.SetFloat("SFXVolume", _sfxVolume);
         else audioMixer.SetFloat("SFXVolume", -80);

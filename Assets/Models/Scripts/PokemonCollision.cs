@@ -36,12 +36,14 @@ public class PokemonCollision : MonoBehaviour
         {
             case "Pokeball":
                 Debug.Log("Pokemon Caught");
+                if ( _audioSource.isPlaying ) _audioSource.Stop();
                 _audioSource.PlayOneShot( caughtSound );
                 mat.mainTexture = caughtTexture;
                 StartCoroutine( WaitAndResetTexture() );
                 break;
             case "Berry":
                 Debug.Log("Pokemon Eat");
+                if ( _audioSource.isPlaying ) _audioSource.Stop();
                 _audioSource.PlayOneShot( happySound );
                 mat.mainTexture = happyTexture;
                 StartCoroutine( WaitAndResetTexture() );

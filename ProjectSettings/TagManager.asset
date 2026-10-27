@@ -8,7 +8,7 @@ TagManager:
   - Berry
   - Pokeball
   - Terrain
-  - HandOrController
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
