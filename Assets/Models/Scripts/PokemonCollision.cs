@@ -40,6 +40,7 @@ public class PokemonCollision : MonoBehaviour
                 _audioSource.PlayOneShot( caughtSound );
                 mat.mainTexture = caughtTexture;
                 StartCoroutine( WaitAndResetTexture() );
+                PlayerPrefs.SetInt( gameObject.name, 1 );
                 break;
             case "Berry":
                 Debug.Log("Pokemon Eat");

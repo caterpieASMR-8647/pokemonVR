@@ -87,6 +87,9 @@ PrefabInstance:
       addedObject: {fileID: 1025540458283509736}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a712ae7161550f24fa87fe6e79a531ff, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6877582429880541612}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a712ae7161550f24fa87fe6e79a531ff, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -2442489548231837265}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a712ae7161550f24fa87fe6e79a531ff, type: 3}
       insertIndex: -1
@@ -170,6 +173,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &6877582429880541612
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653261012080315184}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.7
+  m_Height: 2.68
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.34, z: 0}
 --- !u!95 &-2442489548231837265
 Animator:
   serializedVersion: 7
@@ -231,7 +257,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 10
   Pan2D: 0

@@ -23,7 +23,7 @@ public class PokeballCollision : MonoBehaviour
     {
         if ( collision.gameObject.CompareTag( "Terrain" ) ) Destroy(gameObject);
         
-        if ( collision.gameObject.CompareTag( "Pokemon" ) )
+        if ( collision.gameObject.CompareTag( "Pokemon" ) && collision.collider.TryGetComponent( CapsuleCollider, out _ ) )
         {
             _rigidbody.linearVelocity.Inverse();
             StartCoroutine(RotateToIdentity());

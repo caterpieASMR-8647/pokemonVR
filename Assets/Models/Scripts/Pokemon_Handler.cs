@@ -11,6 +11,8 @@ public class Pokemon_Handler : MonoBehaviour
     
     [SerializeField]
     private GameObject[] pokemons;
+
+    private int pokemonCount = 0;
     
     private NavMeshAgent[] agents;
     private Animator[] animators;
@@ -24,11 +26,31 @@ public class Pokemon_Handler : MonoBehaviour
             foreach (var pokemon in pokemons)
             {
                 Instantiate( pokemon, RandomNavMeshLocation(15f), Quaternion.identity );
+                pokemonCount = 4;
             }
         }
         else
         {
-            
+            if ( PlayerPrefs.HasKey( "bulbasaur (Clone)" ) && PlayerPrefs.GetInt( "bulbasaur (Clone)" ) == 1 )
+            {
+                Instantiate(pokemons[0], RandomNavMeshLocation(15f), Quaternion.identity);
+                pokemonCount++;
+            }
+            if ( PlayerPrefs.HasKey( "dragonite (Clone)" ) && PlayerPrefs.GetInt( "dragonite (Clone)" ) == 1 )
+            {
+                Instantiate(pokemons[1], RandomNavMeshLocation(15f), Quaternion.identity);
+                pokemonCount++;
+            }
+            if ( PlayerPrefs.HasKey( "pikachu (Clone)" ) && PlayerPrefs.GetInt( "pikachu (Clone)" ) == 1 )
+            {
+                Instantiate(pokemons[2], RandomNavMeshLocation(15f), Quaternion.identity);
+                pokemonCount++;
+            }
+            if ( PlayerPrefs.HasKey( "squirtle (Clone)" ) && PlayerPrefs.GetInt( "squirtle (Clone)" ) == 1 )
+            {
+                Instantiate(pokemons[3], RandomNavMeshLocation(15f), Quaternion.identity);
+                pokemonCount++;
+            }
         }
     }
 
@@ -52,22 +74,21 @@ public class Pokemon_Handler : MonoBehaviour
         {
             case 39:
                 tickCounter = 0;
-                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(0);
+                if ( Random.Range( 0, 10 ) == 0 && pokemonCount > 0 ) CheckAgent(0);
                 break;
             case 9:
-                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(1);
+                if ( Random.Range( 0, 10 ) == 0 && pokemonCount > 1 ) CheckAgent(1);
                 break;
             case 19:
-                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(2);
+                if ( Random.Range( 0, 10 ) == 0 && pokemonCount > 2 ) CheckAgent(2);
                 break;
             case 29:
-                if ( Random.Range( 0, 10 ) == 0 ) CheckAgent(3);
+                if ( Random.Range( 0, 10 ) == 0 && pokemonCount > 3 ) CheckAgent(3);
                 break;
             default:
                 break;
         }
-        
-        animators[tickCounter%4].SetBool( IsMoving, agents[tickCounter%4].velocity.magnitude > 0.1f );
+        if ( pokemonCount != 0 ) animators[tickCounter%pokemonCount].SetBool( IsMoving, agents[tickCounter%pokemonCount].velocity.magnitude > 0.1f );
         // agents[tickCounter%4].isStopped DA PROVARE INVECE CHE CONTROLLARE LA VELOCITA'
     }
 

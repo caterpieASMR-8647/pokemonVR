@@ -7324,7 +7324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pokemon_Handler
   randomRadius: 15
-  onlyCaptured: 0
+  onlyCaptured: 1
   pokemons:
   - {fileID: 2653261012080315184, guid: 21504ca81d2c2b54dada7a69ce1e38b7, type: 3}
   - {fileID: 4212039743687628985, guid: 1b27690476382d7469d11cfd41f247ef, type: 3}
