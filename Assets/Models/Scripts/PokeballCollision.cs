@@ -6,26 +6,24 @@ using UnityEngine;
 public class PokeballCollision : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    private Animator _animator;
+    private Animation _animation;
     private const string CaughtPokemon = "CaughtPokemon";
-    
-    // private void Awake()
-    // {
-    //     Instantiate(gameObject, Vector3.zero, Quaternion.identity);
-    // }
 
-    // void Start()
-    // {
-    //     gameObject.SetActive( false );
-    // }
+    private void Start()
+    {
+        _animation = GetComponentInChildren<Animation>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if ( collision.gameObject.CompareTag( "Terrain" ) ) Destroy(gameObject);
         
-        if ( collision.gameObject.CompareTag( "Pokemon" ) && collision.collider.TryGetComponent( CapsuleCollider, out _ ) )
+        if ( collision.gameObject.CompareTag( "Pokemon" ) )
         {
             _rigidbody.linearVelocity.Inverse();
+            // _animator.SetTrigger( CaughtPokemon );
+            _animation.Play( CaughtPokemon );
+            _animation.
             StartCoroutine(RotateToIdentity());
             StartCoroutine(PokeballAnimation());
         }

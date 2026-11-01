@@ -2377,7 +2377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffe5fc2af04a6d4f9bf16a1d080d884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PocketPokeball
-  pokeball: {fileID: 8716447156320855505, guid: 9b16285258aea3d43a9fa8872011735f, type: 3}
+  pokeball: {fileID: 2188211401225519203, guid: 10e7887533c49af42b3dfde79c470fd9, type: 3}
   _handTag: PlayerHand
 --- !u!1818360608 &571259329
 PositionConstraint:

@@ -19,8 +19,8 @@ TagManager:
   - Tree
   - NavMesh
   - Teleport
-  - 
-  - 
+  - BerriesCollider
+  - PokeballCollider
   - 
   - 
   - 
