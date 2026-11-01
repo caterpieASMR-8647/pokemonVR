@@ -23,7 +23,7 @@ public class PokeballCollision : MonoBehaviour
             _rigidbody.linearVelocity.Inverse();
             // _animator.SetTrigger( CaughtPokemon );
             _animation.Play( CaughtPokemon );
-            _animation.
+            // _animation.
             StartCoroutine(RotateToIdentity());
             StartCoroutine(PokeballAnimation());
         }
@@ -39,7 +39,7 @@ public class PokeballCollision : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         _rigidbody.isKinematic = true;
-        _animator.SetTrigger( CaughtPokemon );
+        // _animator.SetTrigger( CaughtPokemon );
         _rigidbody.freezeRotation = true;
         yield return new WaitForSeconds(2f);
         _rigidbody.isKinematic = false;
