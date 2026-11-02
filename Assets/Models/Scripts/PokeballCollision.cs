@@ -16,7 +16,12 @@ public class PokeballCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ( collision.gameObject.CompareTag( "Terrain" ) ) Destroy(gameObject);
+        if (collision.gameObject.CompareTag("PlayerHand"))
+        {
+            _rigidbody.isKinematic = false;
+        }
+        
+        if ( collision.gameObject.CompareTag( "Terrain" ) ) StartCoroutine(WaitAndDestroy());
         
         if ( collision.gameObject.CompareTag( "Pokemon" ) )
         {
@@ -54,5 +59,11 @@ public class PokeballCollision : MonoBehaviour
         {
             Quaternion.Lerp( _rigidbody.rotation, endRotation, 1f * Time.deltaTime );
         } while ( _rigidbody.rotation != endRotation );
+    }
+
+    private IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }

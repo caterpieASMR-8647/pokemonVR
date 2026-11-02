@@ -3453,7 +3453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &927844573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3470,7 +3470,6 @@ MonoBehaviour:
   - {fileID: 1852873289}
   - {fileID: 1566267553}
   - {fileID: 547804268}
-  _maincamera: {fileID: 2135667605}
 --- !u!4 &927844574
 Transform:
   m_ObjectHideFlags: 0
@@ -3480,8 +3479,8 @@ Transform:
   m_GameObject: {fileID: 927844572}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.003, y: 0.003, z: 0.003}
+  m_LocalPosition: {x: 53.624, y: 3.267, z: 52.867}
+  m_LocalScale: {x: 0.0070000007, y: 0.0070000007, z: 0.0070000007}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1852873294}
@@ -7348,7 +7347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pokemon_Handler
   randomRadius: 15
-  onlyCaptured: 1
+  onlyCaptured: 0
   pokemons:
   - {fileID: 2653261012080315184, guid: 21504ca81d2c2b54dada7a69ce1e38b7, type: 3}
   - {fileID: 4212039743687628985, guid: 1b27690476382d7469d11cfd41f247ef, type: 3}
@@ -7538,7 +7537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1852873290
 MonoBehaviour:
   m_ObjectHideFlags: 0

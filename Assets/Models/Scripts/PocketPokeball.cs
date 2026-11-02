@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PocketPokeball : MonoBehaviour
@@ -11,6 +12,9 @@ public class PocketPokeball : MonoBehaviour
     
     [SerializeField] private GameObject pokeball;
     [SerializeField] private string _handTag = "PlayerHand";
+
+    private GameObject _go;
+    private HandGrabInteractor _grabInteractor;
 
     private class HandState
     {
@@ -39,11 +43,17 @@ public class PocketPokeball : MonoBehaviour
             HandGrabInteractor = other.GetComponentInParent<HandGrabInteractor>(),
             WasSelecting = false
         };
+        
+        SpawnAndGrab(_inside[other], other.transform);
     }
 
     private void OnTriggerExit(Collider other)
     {
         _inside.Remove(other);
+        if ( _grabInteractor != null && !_grabInteractor.IsGrabbing )
+        {
+            _go.GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
     
     // private void Update()
@@ -55,7 +65,7 @@ public class PocketPokeball : MonoBehaviour
         
         if (selecting && !state.WasSelecting)
         {
-            SpawnAndGrab(state, other.transform);
+            SpawnAndGrab(state, transform);
         }
         state.WasSelecting = selecting;
         
@@ -87,19 +97,20 @@ public class PocketPokeball : MonoBehaviour
     {
         if ( GameObject.FindGameObjectWithTag( "Pokeball" ) ) return;
         
-        var go = Instantiate(pokeball, handTransform.position, handTransform.rotation);
+        _go = Instantiate(pokeball, handTransform.position , handTransform.rotation);
+        _go.GetComponent<Rigidbody>().isKinematic = true;
 
         if (s.GrabInteractor != null &&
-            go.TryGetComponent(out GrabInteractable gi))
+            _go.TryGetComponent(out GrabInteractable gi))
         {
             s.GrabInteractor.ForceSelect(gi);
             Debug.Log("grabbed");
         }
         else if (s.HandGrabInteractor != null &&
-                 go.TryGetComponent(out HandGrabInteractable hgi))
+                 _go.TryGetComponent(out HandGrabInteractable hgi))
         {
             s.HandGrabInteractor.ForceSelect(hgi);
-            Debug.Log("hand grabbed");
+            _grabInteractor = s.HandGrabInteractor;
         }
     }
 }

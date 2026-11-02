@@ -74,13 +74,13 @@ PrefabInstance:
       addedObject: {fileID: 8092864855115071889}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 137e5c1f778d73547b0b4bfcbf003072, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5394299005660367934}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 137e5c1f778d73547b0b4bfcbf003072, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 103114494992855971}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 137e5c1f778d73547b0b4bfcbf003072, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1511332434782546570}
+    - targetCorrespondingSourceObject: {fileID: -6684770943204322622, guid: 137e5c1f778d73547b0b4bfcbf003072, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4798831998856279923}
+    - targetCorrespondingSourceObject: {fileID: -6684770943204322622, guid: 137e5c1f778d73547b0b4bfcbf003072, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7663901064445482245}
   m_SourcePrefab: {fileID: 100100000, guid: 137e5c1f778d73547b0b4bfcbf003072, type: 3}
 --- !u!1 &2188211401225519203 stripped
 GameObject:
@@ -173,14 +173,31 @@ MonoBehaviour:
   _rigidbody: {fileID: 2071055969843464304}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _forceKinematicDisabled: 0
---- !u!114 &5394299005660367934
+  _forceKinematicDisabled: 1
+--- !u!114 &1511332434782546570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2188211401225519203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827608f695b21f441ab586b8e8750d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PokeballCollision
+--- !u!1 &3577427397252280304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6684770943204322622, guid: 137e5c1f778d73547b0b4bfcbf003072, type: 3}
+  m_PrefabInstance: {fileID: 1341931389289561394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4798831998856279923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577427397252280304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a1bc992571301d4a9602ac95ef4c71a, type: 3}
@@ -190,19 +207,19 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
+  _pointableElement: {fileID: 8092864855115071889}
   _rigidbody: {fileID: 2071055969843464304}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
---- !u!114 &103114494992855971
+--- !u!114 &7663901064445482245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2188211401225519203}
+  m_GameObject: {fileID: 3577427397252280304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
@@ -236,15 +253,3 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 1
   _handGrabPoses: []
---- !u!114 &1511332434782546570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2188211401225519203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 827608f695b21f441ab586b8e8750d9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PokeballCollision
