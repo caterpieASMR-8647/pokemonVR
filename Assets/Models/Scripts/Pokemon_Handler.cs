@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -31,22 +32,22 @@ public class Pokemon_Handler : MonoBehaviour
         }
         else
         {
-            if ( PlayerPrefs.HasKey( "bulbasaur (Clone)" ) && PlayerPrefs.GetInt( "bulbasaur (Clone)" ) == 1 )
+            if ( PlayerPrefs.HasKey( "bulbasaur(Clone)" ) && PlayerPrefs.GetInt( "bulbasaur(Clone)" ) == 1 )
             {
                 Instantiate(pokemons[0], RandomNavMeshLocation(15f), Quaternion.identity);
                 pokemonCount++;
             }
-            if ( PlayerPrefs.HasKey( "dragonite (Clone)" ) && PlayerPrefs.GetInt( "dragonite (Clone)" ) == 1 )
+            if ( PlayerPrefs.HasKey( "dragonite(Clone)" ) && PlayerPrefs.GetInt( "dragonite(Clone)" ) == 1 )
             {
                 Instantiate(pokemons[1], RandomNavMeshLocation(15f), Quaternion.identity);
                 pokemonCount++;
             }
-            if ( PlayerPrefs.HasKey( "pikachu (Clone)" ) && PlayerPrefs.GetInt( "pikachu (Clone)" ) == 1 )
+            if ( PlayerPrefs.HasKey( "pikachu(Clone)" ) && PlayerPrefs.GetInt( "pikachu(Clone)" ) == 1 )
             {
                 Instantiate(pokemons[2], RandomNavMeshLocation(15f), Quaternion.identity);
                 pokemonCount++;
             }
-            if ( PlayerPrefs.HasKey( "squirtle (Clone)" ) && PlayerPrefs.GetInt( "squirtle (Clone)" ) == 1 )
+            if ( PlayerPrefs.HasKey( "squirtle(Clone)" ) && PlayerPrefs.GetInt( "squirtle(Clone)" ) == 1 )
             {
                 Instantiate(pokemons[3], RandomNavMeshLocation(15f), Quaternion.identity);
                 pokemonCount++;
@@ -90,6 +91,11 @@ public class Pokemon_Handler : MonoBehaviour
         }
         if ( pokemonCount != 0 ) animators[tickCounter%pokemonCount].SetBool( IsMoving, agents[tickCounter%pokemonCount].velocity.magnitude > 0.1f );
         // agents[tickCounter%4].isStopped DA PROVARE INVECE CHE CONTROLLARE LA VELOCITA'
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     public Vector3 RandomNavMeshLocation( float radius )

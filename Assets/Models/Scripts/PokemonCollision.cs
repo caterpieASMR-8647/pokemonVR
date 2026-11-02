@@ -23,11 +23,14 @@ public class PokemonCollision : MonoBehaviour
 
     private AudioSource _audioSource;
     private float _countdown;
+    private ParticleSystem _particleSystem;
+    [SerializeField] private GameObject _caughtStar;
     
     private void Start()
     {
         _audioSource = gameObject.GetComponent<AudioSource>();
         _countdown = Random.Range( 0, 21 );
+        _particleSystem = GetComponent<ParticleSystem>();
     }
 
     private void OnTriggerEnter( Collider otherCollider )
@@ -40,7 +43,10 @@ public class PokemonCollision : MonoBehaviour
                 _audioSource.PlayOneShot( caughtSound );
                 mat.mainTexture = caughtTexture;
                 StartCoroutine( WaitAndResetTexture() );
+                StartCoroutine( CaughtParticles() );
                 PlayerPrefs.SetInt( gameObject.name, 1 );
+                Debug.Log(PlayerPrefs.GetInt( gameObject.name ) );
+                // PlayerPrefs.Save();
                 break;
             case "Berry":
                 Debug.Log("Pokemon Eat");
@@ -72,5 +78,13 @@ public class PokemonCollision : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         mat.mainTexture = baseTexture;
+    }
+    
+    private IEnumerator CaughtParticles()
+    {
+        _particleSystem.Play();
+        yield return new WaitForSeconds(.5f);
+        _particleSystem.Stop();
+        _caughtStar.gameObject.SetActive(true);
     }
 }
