@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class PokemonCollision : MonoBehaviour
 {
@@ -25,12 +26,27 @@ public class PokemonCollision : MonoBehaviour
     private float _countdown;
     private ParticleSystem _particleSystem;
     [SerializeField] private GameObject _caughtStar;
+    [SerializeField] private Material _starMaterial;
+    [SerializeField] private Material _heartMaterial;
     
     private void Start()
     {
         _audioSource = gameObject.GetComponent<AudioSource>();
         _countdown = Random.Range( 0, 21 );
         _particleSystem = GetComponent<ParticleSystem>();
+        if (SceneManager.GetActiveScene().name == "City")
+        {
+            if ( PlayerPrefs.HasKey( gameObject.name ) && PlayerPrefs.GetInt( gameObject.name ) == 1 )
+            {
+                _caughtStar.gameObject.SetActive(true);
+            }
+            _particleSystem.GetComponent<ParticleSystemRenderer>().material = _starMaterial;
+        }
+        else
+        {
+            _particleSystem.GetComponent<ParticleSystemRenderer>().material = _heartMaterial;
+            
+        }
     }
 
     private void OnTriggerEnter( Collider otherCollider )
@@ -46,7 +62,6 @@ public class PokemonCollision : MonoBehaviour
                 StartCoroutine( CaughtParticles() );
                 PlayerPrefs.SetInt( gameObject.name, 1 );
                 Debug.Log(PlayerPrefs.GetInt( gameObject.name ) );
-                // PlayerPrefs.Save();
                 break;
             case "Berry":
                 Debug.Log("Pokemon Eat");
@@ -54,6 +69,8 @@ public class PokemonCollision : MonoBehaviour
                 _audioSource.PlayOneShot( happySound );
                 mat.mainTexture = happyTexture;
                 StartCoroutine( WaitAndResetTexture() );
+                StartCoroutine( CaughtParticles() );
+                otherCollider.GetComponent<BerryReset>().ResetPosition();
                 break;
         }
     }

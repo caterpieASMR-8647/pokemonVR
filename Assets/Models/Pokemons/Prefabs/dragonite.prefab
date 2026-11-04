@@ -358,9 +358,11 @@ MonoBehaviour:
   baseTexture: {fileID: 2800000, guid: 2dc031c340e38fb43b731404c8cb1325, type: 3}
   caughtTexture: {fileID: 2800000, guid: c29c1802c5713e4438439ade94cdc4b7, type: 3}
   caughtSound: {fileID: 8300000, guid: 15315a96d81983844b3559d0a0f837aa, type: 3}
-  happySound: {fileID: 8300000, guid: 393e064b430fe424cbaa8aa810e00b62, type: 3}
+  happySound: {fileID: 8300000, guid: c38bc7907ff9e51489e03fe77b6f7f1a, type: 3}
   idleSound: {fileID: 8300000, guid: 16206deb9a846d048ae11b7ec807d6bf, type: 3}
   _caughtStar: {fileID: 8307515108479460238}
+  _starMaterial: {fileID: 2100000, guid: bb20cb7bbc727e442b6ca250310548c5, type: 2}
+  _heartMaterial: {fileID: 2100000, guid: d029a8ec2043f4144bca4aff77885198, type: 2}
 --- !u!82 &3452359446223605313
 AudioSource:
   m_ObjectHideFlags: 0

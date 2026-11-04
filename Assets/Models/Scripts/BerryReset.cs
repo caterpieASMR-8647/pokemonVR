@@ -32,4 +32,9 @@ public class BerryReset : MonoBehaviour
             rigidbody.transform.position = ogPosition;
         }
     }
+
+    public void ResetPosition()
+    {
+        rigidbody.transform.position = ogPosition;
+    }
 }
